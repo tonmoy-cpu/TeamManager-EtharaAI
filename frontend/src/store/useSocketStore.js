@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { io } from 'socket.io-client';
 import { useAuthStore } from './useAuthStore';
 
-const SOCKET_URL = import.meta.env.PROD ? '/' : 'http://localhost:5000';
+const SOCKET_URL = import.meta.env.VITE_API_URL || 'https://teammanager-etharaai-production.up.railway.app';
 
 export const useSocketStore = create((set, get) => ({
   socket: null,
